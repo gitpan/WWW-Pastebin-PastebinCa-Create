@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use lib '../lib';
+use lib qw(../lib lib);
 use WWW::Pastebin::PastebinCa::Create;
 
 my $paster = WWW::Pastebin::PastebinCa::Create->new;

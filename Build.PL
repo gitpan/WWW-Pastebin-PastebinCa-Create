@@ -14,11 +14,14 @@ my $builder = Module::Build->new(
         'Carp'                  => 1.04,
         'URI'                   => 1.35,
         'WWW::Mechanize'        => 1.34,
-        'Class::Data::Accessor' => 0.04001,
 	'overload'       => 1.04,
+	'perl' => '5.006',
     },
+    configure_requires => { 'Module::Build' => 0 },
     add_to_cleanup      => [ 'WWW-Pastebin-PastebinCa-Create-*' ],
     create_makefile_pl => 'traditional',
 );
-
+if ( $ENV{RELEASE_TESTING} ) {
+    system('pod2text lib/WWW/Pastebin/PastebinCa/Create.pm > README');
+}
 $builder->create_build_script();

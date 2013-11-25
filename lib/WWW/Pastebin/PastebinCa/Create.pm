@@ -3,16 +3,10 @@ package WWW::Pastebin::PastebinCa::Create;
 use warnings;
 use strict;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 use Carp;
 use URI;
 use WWW::Mechanize;
-use base 'Class::Data::Accessor';
-__PACKAGE__->mk_classaccessors qw(
-    mech
-    paste_uri
-    error
-);
 
 my %Valid_Langs   = valid_langs();
 my %Valid_Expires = map { $_ => $_ } valid_expires();
@@ -42,7 +36,7 @@ sub paste {
     my ( $self, $content ) = splice @_, 0, 2;
 
     $self->$_(undef) for qw(paste_uri error);
-    
+
     defined $content
         or carp "first argument to paste() is not defined" and return;
 
@@ -176,6 +170,24 @@ sub valid_expires {
         '6 months',
         '1 month',
     );
+}
+
+sub mech {
+    my $self = shift;
+    if ( @_ ) { $self->{MECH} = shift };
+    return $self->{MECH};
+}
+
+sub paste_uri {
+    my $self = shift;
+    if ( @_ ) { $self->{PASTE_URI} = shift };
+    return $self->{PASTE_URI};
+}
+
+sub error {
+    my $self = shift;
+    if ( @_ ) { $self->{ERROR} = shift };
+    return $self->{ERROR};
 }
 
 1;
