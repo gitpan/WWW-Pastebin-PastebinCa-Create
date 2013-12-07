@@ -16,7 +16,7 @@ name: WWW-Pastebin-PastebinCa-Create
 provides:
   WWW::Pastebin::PastebinCa::Create:
     file: lib/WWW/Pastebin/PastebinCa/Create.pm
-    version: 0.002
+    version: 0.003
 requires:
   Carp: 1.04
   URI: 1.35
@@ -25,4 +25,4 @@ requires:
   perl: 5.006
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.002
+version: 0.003

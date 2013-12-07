@@ -1,5 +1,8 @@
 Revision history for WWW-Pastebin-PastebinCa-Create
 
+0.003   2013-12-07
+        - Fixed broken test (fixes RT#91236)
+
 0.002   2013-11-25
         - Stopped using deprecated Class::Data::Accessor
         - Got rid of "Use of qw(..." warning

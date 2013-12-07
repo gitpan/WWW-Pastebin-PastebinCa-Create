@@ -1,12 +1,11 @@
 #!/usr/bin/env perl
 
-use Test::More tests => 12;
+use Test::More tests => 11;
 
 BEGIN {
     use_ok('Carp');
     use_ok('URI');
     use_ok('WWW::Mechanize');
-    use_ok('Class::Data::Accessor');
     use_ok( 'WWW::Pastebin::PastebinCa::Create' );
 }
 

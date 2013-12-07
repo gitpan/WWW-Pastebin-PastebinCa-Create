@@ -3,7 +3,7 @@ package WWW::Pastebin::PastebinCa::Create;
 use warnings;
 use strict;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 use Carp;
 use URI;
 use WWW::Mechanize;
@@ -193,6 +193,7 @@ sub error {
 1;
 __END__
 
+=encoding utf8
 
 =head1 NAME
 
