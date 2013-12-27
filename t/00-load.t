@@ -27,6 +27,13 @@ if ( not defined $uri ) {
     ok( (defined $o->error and length $o->error), 'error must be defined' );
     ok( (not defined $o->paste_uri), '->paste_uri must be undefined');
     ok(1) for 1..2;
+
+    if ( $o->error eq 'Paste form was not found' ) {
+        BAIL_OUT('Could not find paste form.'
+            . ' It is very likely this module is broken.'
+            . ' Please email to zoffix@cpan.org'
+            . ' so this module could be fixed.');
+    }
 }
 else {
     isa_ok($uri, 'URI::http');

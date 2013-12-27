@@ -3,7 +3,7 @@ package WWW::Pastebin::PastebinCa::Create;
 use warnings;
 use strict;
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 use Carp;
 use URI;
 use WWW::Mechanize;
@@ -22,6 +22,7 @@ sub new {
 
     $args{timeout} ||= 30;
     $args{mech}    ||= WWW::Mechanize->new(
+        autocheck => 0,
         timeout => $args{timeout},
         agent   => 'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1.12)'
                     .' Gecko/20080207 Ubuntu/7.10 (gutsy) Firefox/2.0.0.12',
